@@ -14,6 +14,10 @@ class Project {
             item !== todoItem 
         ); 
     }
+
+    getTodoList() {
+        return this.todoList;
+    }
 }
 
 export { Project };
