@@ -18,11 +18,11 @@ class Render {
         projectDiv.addEventListener('click', () => {
             // remove  selected class from all projects
             document.querySelectorAll('.project').forEach(project => {
-                project.classList.remove('selected');
+                project.classList.remove('current-selected');
             });
 
             // add it to the clicked project
-            projectDiv.classList.add('selected');
+            projectDiv.classList.add('current-selected');
     
             this.renderTodoList(project);
 

@@ -9,7 +9,9 @@ import { Project } from './modules/project';
 import { Projects } from './modules/projects';
 import { TodoItem } from './modules/todoItem';
 
-import { initializeProjectModal } from './modules/newProjectModal';
+import { initializeProjectModal } from './modules/modal';
+import { initializeTodoModal } from './modules/modal';
+
 
 const projects = new Projects();
 const ui = new Render();
@@ -17,6 +19,10 @@ const ui = new Render();
 // Initialize the modal
 var addProjectModal = new bootstrap.Modal(document.getElementById('addProjectModal'), {});
 initializeProjectModal(addProjectModal, projects, ui);
+
+var addTodoModal = new bootstrap.Modal(document.getElementById('addTodoModal'), {});
+initializeTodoModal(addTodoModal, projects, ui);
+
 
 // Add some projects and todos...
 const project1 = new Project('Project 1');

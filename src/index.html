@@ -38,14 +38,51 @@
                 </div>
               </div>
             
-            <div class="project-list">
-
-            </div>
+            <div class="project-list"></div>
         </div>
 
-        <div class="todo-list">
+        <div class="todos">
             <div>Tasks</div>
+            <button id="add-todo-button">Add Todo</button>
+            <div class="modal fade" id="addTodoModal" tabindex="-1" aria-labelledby="addTodoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addTodoModalLabel">Add New Todo</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="add-todo-form">
+                        <div class="mb-3">
+                          <label for="todo-name" class="form-label">Todo Name</label>
+                          <input type="text" class="form-control" id="todo-name">
+                        </div>
+                        <div class="mb-3">
+                          <textarea class="form-control" id="todo-description" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="todo-due-date" class="form-label">Due Date</label>
+                          <input type="date" class="form-control" id="todo-due-date">
+                        </div>
+                        <div class="mb-3">
+                          <label for="todo-priority" class="form-label">Priority</label>
+                          <select class="form-select" id="todo-priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                          </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Todo</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="todo-list"></div>
         </div>
+        
 
 
     </div>
