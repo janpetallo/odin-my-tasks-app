@@ -17,7 +17,27 @@
 
         <div class="projects">
             <div class="section-name">My Projects</div>
-            <button class="btn btn-primary">Add Project</button>
+            <button id="add-project-button">Add Project</button>
+            <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addProjectModalLabel">Add Project</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="add-project-form">
+                        <div class="mb-3">
+                          <label for="project-name" class="form-label">Project Name</label>
+                          <input type="text" class="form-control" id="project-name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Project</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
             <div class="project-list">
 
             </div>
