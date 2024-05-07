@@ -14,6 +14,19 @@ class Render {
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project');
         projectDiv.innerHTML = project.name;
+
+        projectDiv.addEventListener('click', () => {
+            // remove  selected class from all projects
+            document.querySelectorAll('.project').forEach(project => {
+                project.classList.remove('selected');
+            });
+
+            // add it to the clicked project
+            projectDiv.classList.add('selected');
+    
+            this.renderTodoList(project);
+
+        });
         this.projectList.appendChild(projectDiv);
     }
 
