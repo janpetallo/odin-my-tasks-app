@@ -1,4 +1,9 @@
+
+// Import our custom CSS
+import './scss/styles.scss';
 import './styles.css'
+// Import all of Bootstrap's JS
+import * as bootstrap from 'bootstrap'
 import { Render } from './modules/render';
 import { Project } from './modules/project';
 import { Projects } from './modules/projects';
