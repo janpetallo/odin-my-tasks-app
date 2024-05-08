@@ -25,6 +25,11 @@ initializeTodoModal(addTodoModal, projects, ui);
 
 
 // Add some projects and todos...
+// Default Project
+const defaultProject = new Project('My Project');
+projects.addProject(defaultProject);
+
+
 const project1 = new Project('Project 1');
 project1.addTodoItem(new TodoItem('Todo 1', 'Description 1', '2022-12-31', 'High'));
 projects.addProject(project1);

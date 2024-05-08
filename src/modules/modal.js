@@ -38,10 +38,10 @@ export function initializeTodoModal(addTodoModal, projects, ui) {
 
         if (todoName && todoDueDate && todoPriority) {
             const newTodo = new TodoItem(todoName, todoDescription, todoDueDate, todoPriority);
-            const currentProjectName = document.querySelector('.current-selected').textContent;
-            const currentProject = projects.getProject(currentProjectName);
+            const currentProjectName = document.querySelector('.current-selected').textContent; // get the current selected project
+            const currentProject = projects.getProject(currentProjectName); // get the project object
             currentProject.addTodoItem(newTodo);
-            ui.renderTodoList(currentProject);
+            ui.renderTodoList(currentProject); // render the todo list for the selected project
             console.log(currentProject.getTodoList());
         }
 

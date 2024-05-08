@@ -15,6 +15,12 @@ class Render {
         projectDiv.classList.add('project');
         projectDiv.innerHTML = project.name;
 
+        // If the project's name is 'My Project', make it the default selected project
+        if (project.name === 'My Project') {
+            projectDiv.classList.add('current-selected');
+            this.renderTodoList(project); // render the todo list for the selected project
+        }
+
         projectDiv.addEventListener('click', () => {
             // remove  selected class from all projects
             document.querySelectorAll('.project').forEach(project => {
@@ -23,8 +29,7 @@ class Render {
 
             // add it to the clicked project
             projectDiv.classList.add('current-selected');
-    
-            this.renderTodoList(project);
+            this.renderTodoList(project); // render the todo list for the selected project
 
         });
         this.projectList.appendChild(projectDiv);
