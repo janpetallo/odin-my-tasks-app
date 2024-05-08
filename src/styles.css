@@ -100,7 +100,16 @@ body {
 }
 
 .projects .project-list .project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
+}
+
+.projects .project-list .project svg {
+    fill: black;
+    width: 1rem;
+    height: 1rem;
 }
 
 .projects .project-list .project:hover {
