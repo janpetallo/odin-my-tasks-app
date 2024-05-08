@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 
 class Render {
     constructor() {
@@ -44,7 +45,18 @@ class Render {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
         taskDiv.classList.add(todoItem.priority);
-        taskDiv.innerHTML = todoItem.title + ' - ' + todoItem.dueDate;
+
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('title');
+        titleDiv.innerHTML = todoItem.title;
+
+        const dateDiv = document.createElement('div');
+        dateDiv.classList.add('date');
+        dateDiv.innerHTML = format(todoItem.dueDate, 'MMMM dd, yyyy');
+
+        taskDiv.appendChild(titleDiv);
+        taskDiv.appendChild(dateDiv);
+
         this.todoList.appendChild(taskDiv);
     }
 }
