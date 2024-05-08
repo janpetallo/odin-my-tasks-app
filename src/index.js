@@ -12,6 +12,8 @@ import { TodoItem } from './modules/todoItem';
 import { initializeProjectModal } from './modules/modal';
 import { initializeTodoModal } from './modules/modal';
 
+import { saveProjects, getProjects } from './modules/storage';
+
 
 const projects = new Projects();
 const ui = new Render();
@@ -38,6 +40,8 @@ const project2 = new Project('Project 2');
 project2.addTodoItem(new TodoItem('Todo 2', 'Description 2', '2022-12-31', 'Low'));
 projects.addProject(project2);
 
+saveProjects(projects.getProjects());
+
 // Render the projects and todos
 ui.renderProjects(projects.getProjects());
-ui.renderTodoList(project1);
+console.log(projects.getProjects());

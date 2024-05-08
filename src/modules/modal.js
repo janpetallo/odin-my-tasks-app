@@ -3,6 +3,8 @@
 import { Project } from './project.js';
 import { TodoItem } from './todoItem.js';
 
+import {saveProjects, getProjects} from './storage.js';
+
 export function initializeProjectModal(addProjectModal, projects, ui) {
     document.querySelector('#add-project-button').addEventListener('click', () => {
         addProjectModal.show();
@@ -15,6 +17,7 @@ export function initializeProjectModal(addProjectModal, projects, ui) {
         if (projectName) {
             const newProject = new Project(projectName);
             projects.addProject(newProject);
+            saveProjects(projects.getProjects()); // save the updated projects to local storage
             ui.renderProjects(projects.getProjects());
         }
 
@@ -41,6 +44,7 @@ export function initializeTodoModal(addTodoModal, projects, ui) {
             const currentProjectName = document.querySelector('.current-selected').textContent; // get the current selected project
             const currentProject = projects.getProject(currentProjectName); // get the project object
             currentProject.addTodoItem(newTodo);
+            saveProjects(projects.getProjects()); // save the updated projects to local storage
             ui.renderTodoList(currentProject); // render the todo list for the selected project
             console.log(currentProject.getTodoList());
         }
