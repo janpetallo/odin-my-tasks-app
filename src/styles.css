@@ -112,6 +112,10 @@ body {
     height: 1rem;
 }
 
+.projects .project-list .project svg:hover {
+    fill: var(--primary-color);
+}
+
 .projects .project-list .project:hover {
     background-color: #f0f0f0;
     cursor: pointer;
