@@ -1,4 +1,4 @@
-import { format, formatDistance } from "date-fns";
+import { format, formatDistance, toDate } from "date-fns";
 
 class Render {
     constructor() {
@@ -76,15 +76,18 @@ class Render {
 
         const dateDiv = document.createElement('div');
         dateDiv.classList.add('date');
-        dateDiv.innerHTML = format(todoItem.dueDate, 'MMMM dd, yyyy');
+        dateDiv.innerHTML = format(`${todoItem.dueDate}T24:00:00Z`, 'MMMM dd, yyyy'); 
+        console.log(toDate(todoItem.dueDate));       
 
+        console.log(new Date(`${todoItem.dueDate}T24:00:00Z`));
         // if it is past due, add a class to the task
-        if (new Date(todoItem.dueDate) < new Date()) {
+        if (new Date(`${todoItem.dueDate}T24:00:00Z`) < new Date() ) {
+            console.log(new Date(`${todoItem.dueDate}T24:00:00Z`));
             dateDiv.classList.add('past-due');
 
             // Calculate the time difference
             const timeDifference = formatDistance(
-                new Date(todoItem.dueDate),
+                new Date(`${todoItem.dueDate}T24:00:00Z`),
                 new Date(),
                 { addSuffix: true }
             );
