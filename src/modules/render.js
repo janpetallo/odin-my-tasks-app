@@ -44,7 +44,7 @@ class Render {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
         taskDiv.classList.add(todoItem.priority);
-        taskDiv.innerHTML = todoItem.title + ' - ' + todoItem.dueDate + ' - ' + todoItem.priority;
+        taskDiv.innerHTML = todoItem.title + ' - ' + todoItem.dueDate;
         this.todoList.appendChild(taskDiv);
     }
 }

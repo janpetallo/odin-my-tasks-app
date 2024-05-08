@@ -86,6 +86,7 @@ body {
     background-color: white;
     padding: 0.5rem 1rem;
     width: 100%;
+    border-right: 2px solid var(--bg-color);
 
     display: flex;
     flex-direction: column;
@@ -113,7 +114,7 @@ body {
 }
 
 .todos {
-    background-color: aquamarine;
+    
     padding: 0.5rem 1rem;
     
     display: flex;
@@ -122,8 +123,28 @@ body {
     
 }
 
-.task-list {
-    background-color:aqua;
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.todo-list .task {
+    padding:0 0.5rem;
+    background-color: white;
+    border-left: 5px solid transparent;
+}
+
+.todo-list .task.high {
+    border-left: 5px solid #ff0000;
+}
+
+.todo-list .task.medium {
+    border-left: 5px solid #ff9900;
+}
+
+.todo-list .task.low {
+    border-left: 5px solid #00ff00;
 }
 
 
