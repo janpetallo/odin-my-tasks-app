@@ -42,6 +42,7 @@ export function initializeTodoModal(addTodoModal, projects, ui) {
             const currentProject = projects.getProject(currentProjectName);
             currentProject.addTodoItem(newTodo);
             ui.renderTodoList(currentProject);
+            console.log(currentProject.getTodoList());
         }
 
 

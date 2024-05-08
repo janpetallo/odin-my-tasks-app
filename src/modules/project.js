@@ -1,3 +1,4 @@
+import { compareAsc } from "date-fns";
 
 class Project {
     constructor(name) {
@@ -7,6 +8,7 @@ class Project {
 
     addTodoItem(todoItem) {
         this.todoList.push(todoItem);
+        this.sortTodoList();
     }
 
     removeTodoItem(todoItem) {
@@ -18,6 +20,12 @@ class Project {
     getTodoList() {
         return this.todoList;
     }
+
+    sortTodoList() {
+        this.todoList.sort((a, b) => compareAsc(new Date(a.dueDate), new Date(b.dueDate)));
+    }
+
+    
 }
 
 export { Project };

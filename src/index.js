@@ -16,7 +16,7 @@ import { initializeTodoModal } from './modules/modal';
 const projects = new Projects();
 const ui = new Render();
 
-// Initialize the modal
+// Initialize the modals
 var addProjectModal = new bootstrap.Modal(document.getElementById('addProjectModal'), {});
 initializeProjectModal(addProjectModal, projects, ui);
 
@@ -26,11 +26,11 @@ initializeTodoModal(addTodoModal, projects, ui);
 
 // Add some projects and todos...
 const project1 = new Project('Project 1');
-project1.addTodoItem(new TodoItem('Todo 1', 'Description 1', '2022-12-31', 'High', 'Notes 1'));
+project1.addTodoItem(new TodoItem('Todo 1', 'Description 1', '2022-12-31', 'High'));
 projects.addProject(project1);
 
 const project2 = new Project('Project 2');
-project2.addTodoItem(new TodoItem('Todo 2', 'Description 2', '2022-12-31', 'Low', 'Notes 2'));
+project2.addTodoItem(new TodoItem('Todo 2', 'Description 2', '2022-12-31', 'Low'));
 projects.addProject(project2);
 
 // Render the projects and todos

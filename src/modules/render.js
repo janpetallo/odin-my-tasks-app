@@ -38,7 +38,7 @@ class Render {
     renderTodoItem(todoItem) {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
-        taskDiv.innerHTML = todoItem.title;
+        taskDiv.innerHTML = todoItem.title + ' - ' + todoItem.dueDate + ' - ' + todoItem.priority;
         this.todoList.appendChild(taskDiv);
     }
 }
