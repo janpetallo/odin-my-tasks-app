@@ -1,4 +1,6 @@
-
+:root {
+    --primary-color: #2563eb;
+}
 
 body {
     font-family: "Roboto", sans-serif;
@@ -19,13 +21,30 @@ body {
 
 }
 
+
 .header {
     background-color: #f1f1f1;
     padding: 10px;
     text-align: center;
 
+    color: var(--primary-color);
+
+    font-size: 2.5rem;
+    font-weight: 700;
+
     grid-column: 1 / 3;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}
+
+.header svg {
+    fill: var(--primary-color);
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
 .projects {
