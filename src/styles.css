@@ -107,6 +107,7 @@ body {
 }
 
 .projects .project-list .project svg {
+    display: none;
     fill: black;
     width: 1rem;
     height: 1rem;
@@ -119,7 +120,10 @@ body {
 .projects .project-list .project:hover {
     background-color: #f0f0f0;
     cursor: pointer;
+}
 
+.projects .project-list .project:hover svg {
+    display: block;
 }
 
 .project.current-selected {
@@ -127,7 +131,6 @@ body {
 }
 
 .todos {
-    
     padding: 0.5rem 1rem;
     
     display: flex;
