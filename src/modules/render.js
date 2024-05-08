@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, formatDistance } from "date-fns";
 
 class Render {
     constructor() {
@@ -81,7 +81,18 @@ class Render {
         // if it is past due, add a class to the task
         if (new Date(todoItem.dueDate) < new Date()) {
             dateDiv.classList.add('past-due');
+
+            // Calculate the time difference
+            const timeDifference = formatDistance(
+                new Date(todoItem.dueDate),
+                new Date(),
+                { addSuffix: true }
+            );
+
+            // Display the time difference
+            dateDiv.innerHTML += ` (${timeDifference})`;
         }
+        
 
         taskDiv.appendChild(titleDiv);
         taskDiv.appendChild(dateDiv);
