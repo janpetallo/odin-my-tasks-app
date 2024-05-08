@@ -2,15 +2,17 @@ import { Project } from './project';
 import { TodoItem } from './todoItem';
 
 function saveProjects(projects) {
+  console.log(projects);
   localStorage.setItem('projects', JSON.stringify(projects))
 }
 
 function getProjects(projects) {
   const savedProjects = JSON.parse(localStorage.getItem('projects'));
+  console.log(savedProjects);
 
   // If there are saved projects, add them to the projects object
   if (savedProjects) {
-    savedProjects.forEach(savedProject => {
+    savedProjects.projects.forEach(savedProject => {
         const project = new Project(savedProject.name);
         savedProject.todoList.forEach(savedTodo => {
             const todo = new TodoItem(savedTodo.title, savedTodo.description, savedTodo.dueDate, savedTodo.priority);
@@ -23,7 +25,7 @@ function getProjects(projects) {
     const defaultProject = new Project('My Project');
     projects.addProject(defaultProject);
 
-    saveProjects(projects.getProjects()); // save the default project to local storage
+    saveProjects(projects); // save the default project to local storage
   }
 }
 

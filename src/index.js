@@ -29,5 +29,4 @@ initializeTodoModal(addTodoModal, projects, ui);
 getProjects(projects);
 
 // Render the projects and todos
-ui.renderProjects(projects.getProjects());
-console.log(projects.getProjects());
+ui.renderProjects(projects);

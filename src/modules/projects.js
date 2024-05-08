@@ -1,3 +1,4 @@
+import { saveProjects } from "./storage";
 
 class Projects {
     constructor() {
@@ -12,6 +13,8 @@ class Projects {
         this.projects = this.projects.filter(item => 
             item !== project
         );
+        saveProjects(this);
+
     }
     
     getProjects() {
