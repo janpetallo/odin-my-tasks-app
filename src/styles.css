@@ -163,6 +163,10 @@ body {
 
 }
 
+.todo-list .task .date.past-due {
+    color: #dd0505;
+}
+
 
 
 .todo-list .task.high {

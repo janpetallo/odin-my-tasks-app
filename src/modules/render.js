@@ -78,6 +78,11 @@ class Render {
         dateDiv.classList.add('date');
         dateDiv.innerHTML = format(todoItem.dueDate, 'MMMM dd, yyyy');
 
+        // if it is past due, add a class to the task
+        if (new Date(todoItem.dueDate) < new Date()) {
+            dateDiv.classList.add('past-due');
+        }
+
         taskDiv.appendChild(titleDiv);
         taskDiv.appendChild(dateDiv);
 
