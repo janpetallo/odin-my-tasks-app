@@ -132,8 +132,25 @@ body {
 .todo-list .task {
     padding:0 0.5rem;
     background-color: white;
-    border-left: 5px solid transparent;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
+
+.todo-list .task:hover {
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.todo-list .task .date {
+    font-size: 0.8rem;
+    color: #666;
+
+}
+
+
 
 .todo-list .task.high {
     border-left: 5px solid #ff0000;
