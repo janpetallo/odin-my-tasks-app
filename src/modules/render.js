@@ -186,15 +186,14 @@ class Render {
         // description
         const descriptionDiv = document.createElement('div');
         descriptionDiv.classList.add('description');
-        descriptionDiv.textContent = todoItem.description;
+        descriptionDiv.innerHTML = `<strong>Description:</strong> ${todoItem.description}`;
         moreInfo.appendChild(descriptionDiv);
 
         // priority
         const priorityDiv = document.createElement('div');
         priorityDiv.classList.add('priority');
-        priorityDiv.textContent = todoItem.priority;
+        priorityDiv.innerHTML = `<strong>Priority:</strong> ${todoItem.priority}`;
         moreInfo.appendChild(priorityDiv);
-
         moreInfo.style.display = 'none'; // initially hidden
         taskDiv.appendChild(moreInfo);
 
