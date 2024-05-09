@@ -76,15 +76,23 @@ class Render {
 
         const dateDiv = document.createElement('div');
         dateDiv.classList.add('date');
-        dateDiv.innerHTML = format(`${todoItem.dueDate}T24:00:00Z`, 'MMMM dd, yyyy'); 
-        
+        const dueDate = new Date(`${todoItem.dueDate}T23:59:59`);
+        const today = new Date();
+        today.setHours(0,0,0,0); // set the time to 00:00:00.000
+
+        if (dueDate.toDateString() === today.toDateString()) {
+            dateDiv.innerHTML = 'Today';
+        } else {
+            dateDiv.innerHTML = format(`${todoItem.dueDate}T00:00`, 'MMMM dd, yyyy');
+    }
+
         // if it is past due, add a class to the task
-        if (new Date(`${todoItem.dueDate}T24:00:00Z`) < new Date() ) {
+        if (dueDate < new Date() ) {
             dateDiv.classList.add('past-due');
 
             // Calculate the time difference
             const timeDifference = formatDistance(
-                new Date(`${todoItem.dueDate}T24:00:00Z`),
+                new Date(`${todoItem.dueDate}T24:00:00`),
                 new Date(),
                 { addSuffix: true }
             );
