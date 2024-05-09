@@ -1,4 +1,4 @@
-import { format, formatDistance, toDate } from "date-fns";
+import { format, formatDistance, toDate, subDays } from "date-fns";
 import { saveProjects } from "./storage";
 
 class Render {
@@ -93,11 +93,16 @@ class Render {
             dateDiv.classList.add('past-due');
 
             // Calculate the time difference
-            const timeDifference = formatDistance(
+            let timeDifference = formatDistance(
                 new Date(`${todoItem.dueDate}T24:00:00`),
                 new Date(),
                 { addSuffix: true }
             );
+
+            // Check if the time difference is less than 24 hours
+            if (dueDate < new Date() && dueDate > subDays(new Date(), 1)) {
+                timeDifference = '1 day ago';
+            }
 
             // Display the time difference
             dateDiv.innerHTML += ` (${timeDifference})`;
