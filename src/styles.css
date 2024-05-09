@@ -160,12 +160,22 @@ body {
     cursor: pointer;
 }
 
+.todo-list .task .action {
+    display: flex;
+    gap: 0.5rem;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .todo-list .task:hover svg {
-    display: block;
+    /* display: block; */
+    visibility: visible;
 }
 
 .todo-list .task svg {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     fill: black;
     width: 1rem;
     height: 1rem;
