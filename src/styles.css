@@ -159,6 +159,11 @@ body {
 
 }
 
+.todo-list .task.completed .taskline {
+    text-decoration: line-through;
+    color: #666;
+}
+
 .todo-list .task .taskline{
     padding:0 0.5rem;
 

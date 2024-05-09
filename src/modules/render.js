@@ -155,9 +155,12 @@ class Render {
         if (todoItem.completed) {
             unchecked.style.display = 'none'; // hide the unchecked icon
             checked.style.display = 'inline'; // show the checked icon
+            taskDiv.classList.add('completed');
+
         } else {
             unchecked.style.display = 'inline'; // show the unchecked icon
             checked.style.display = 'none'; // hide the checked icon
+            taskDiv.classList.remove('completed');
         }
 
         // Add click event listener to checkCircle
@@ -172,6 +175,7 @@ class Render {
 
             saveProjects(this.projects);
             this.renderTodoList(project);
+    
         });
 
         
