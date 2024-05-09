@@ -1,13 +1,16 @@
 import { format, formatDistance, toDate } from "date-fns";
+import { saveProjects } from "./storage";
 
 class Render {
     constructor() {
         this.projectList = document.querySelector('.project-list');
         this.todoList = document.querySelector('.todo-list');
+        this.projects;
     }
 
     renderProjects(projects) {
         this.projectList.innerHTML = '';
+        this.projects = projects;
         projects.getProjects().forEach(project => this.renderProject(projects, project));
     }
 
@@ -32,9 +35,7 @@ class Render {
                 e.stopPropagation(); // prevent the project from being selected
                 projects.removeProject(project);
                 this.renderProjects(projects);
-            }
-
-            );
+            });
 
             projectDiv.appendChild(deleteIcon);
         }
@@ -62,10 +63,10 @@ class Render {
 
     renderTodoList(project) {
         this.todoList.innerHTML = '';
-        project.todoList.forEach(todoItem => this.renderTodoItem(todoItem));
+        project.todoList.forEach(todoItem => this.renderTodoItem(project, todoItem));
     }
 
-    renderTodoItem(todoItem) {
+    renderTodoItem(project, todoItem) {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task');
         taskDiv.classList.add(todoItem.priority);
@@ -84,7 +85,7 @@ class Render {
             dateDiv.innerHTML = 'Today';
         } else {
             dateDiv.innerHTML = format(`${todoItem.dueDate}T00:00`, 'MMMM dd, yyyy');
-    }
+        }
 
         // if it is past due, add a class to the task
         if (dueDate < new Date() ) {
@@ -110,6 +111,14 @@ class Render {
         const deleteIcon = document.createElement('div');
         deleteIcon.classList.add('delete-icon');
         deleteIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
+        
+        deleteIcon.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent the task from being selected
+            project.removeTodoItem(todoItem);
+            saveProjects(this.projects);
+            this.renderTodoList(project);
+        });
+
 
         // wrap date, edit an delete in a div
         const actionDiv = document.createElement('div');
