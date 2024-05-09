@@ -171,9 +171,14 @@ class Render {
         contentDiv.appendChild(checkCircle);
         contentDiv.appendChild(titleDiv);
 
-        // add the content and action div to the task div
-        taskDiv.appendChild(contentDiv);
-        taskDiv.appendChild(actionDiv);
+        // wrap content and action in a div
+        const taskline = document.createElement('div');
+        taskline.classList.add('taskline');
+        taskline.appendChild(contentDiv);
+        taskline.appendChild(actionDiv);
+
+        taskDiv.appendChild(taskline);
+
 
         const moreInfo = document.createElement('div');
         moreInfo.classList.add('more-info');
