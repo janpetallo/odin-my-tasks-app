@@ -15,7 +15,7 @@ function getProjects(projects) {
     savedProjects.projects.forEach(savedProject => {
         const project = new Project(savedProject.name);
         savedProject.todoList.forEach(savedTodo => {
-            const todo = new TodoItem(savedTodo.title, savedTodo.description, savedTodo.dueDate, savedTodo.priority);
+            const todo = new TodoItem(savedTodo.title, savedTodo.description, savedTodo.dueDate, savedTodo.priority, savedTodo.completed);
             project.addTodoItem(todo);
         });
         projects.addProject(project);

@@ -150,20 +150,31 @@ class Render {
         checkCircle.appendChild(unchecked);
         checkCircle.appendChild(checked);
 
-        // Add mouseover and mouseout event listeners to checkCircle
-        checkCircle.addEventListener('mouseover', (e) => {
-            if (!todoItem.completed) {
-                unchecked.style.display = 'none'; // hide the unchecked icon
-                checked.style.display = 'inline'; // show the checked icon
+        console.log(todoItem.completed);
+
+        if (todoItem.completed) {
+            unchecked.style.display = 'none'; // hide the unchecked icon
+            checked.style.display = 'inline'; // show the checked icon
+        } else {
+            unchecked.style.display = 'inline'; // show the unchecked icon
+            checked.style.display = 'none'; // hide the checked icon
+        }
+
+        // Add click event listener to checkCircle
+        checkCircle.addEventListener('click', () => {
+            todoItem.completed = !todoItem.completed;
+
+            if (todoItem.completed) {
+                taskDiv.classList.add('completed');
+            } else {
+                taskDiv.classList.remove('completed');
             }
+
+            saveProjects(this.projects);
+            this.renderTodoList(project);
         });
 
-        checkCircle.addEventListener('mouseout', (e) => {
-            if (!todoItem.completed) {
-                unchecked.style.display = 'inline'; // show the unchecked icon
-                checked.style.display = 'none'; // hide the checked icon
-            }
-        });
+        
 
         // wrap checkCircle, title in a div
         const contentDiv = document.createElement('div');
