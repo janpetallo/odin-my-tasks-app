@@ -72,6 +72,11 @@ class Render {
         taskDiv.classList.add('task');
         taskDiv.classList.add(todoItem.priority);
 
+        // checklist icon
+        const checklistIcon = document.createElement('div');
+        checklistIcon.classList.add('checklist-icon');
+        checklistIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>';
+
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('title');
         titleDiv.innerHTML = todoItem.title;
@@ -132,8 +137,15 @@ class Render {
         actionDiv.appendChild(dateDiv);
         actionDiv.appendChild(editIcon);
         actionDiv.appendChild(deleteIcon);
-        
-        taskDiv.appendChild(titleDiv);
+
+        // wrap checklist, title in a div
+        const contentDiv = document.createElement('div');
+        contentDiv.classList.add('content');
+        contentDiv.appendChild(checklistIcon);
+        contentDiv.appendChild(titleDiv);
+
+        // add the content and action div to the task div
+        taskDiv.appendChild(contentDiv);
         taskDiv.appendChild(actionDiv);
 
         this.todoList.appendChild(taskDiv);
