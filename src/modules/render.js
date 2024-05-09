@@ -11,10 +11,10 @@ class Render {
     renderProjects(projects) {
         this.projectList.innerHTML = '';
         this.projects = projects;
-        projects.getProjects().forEach(project => this.renderProject(projects, project));
+        projects.getProjects().forEach(project => this.renderProject(project));
     }
 
-    renderProject(projects, project) {
+    renderProject(project) {
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project');
 
@@ -33,8 +33,9 @@ class Render {
 
             deleteIcon.addEventListener('click', (e) => {
                 e.stopPropagation(); // prevent the project from being selected
-                projects.removeProject(project);
-                this.renderProjects(projects);
+                this.projects.removeProject(project);
+                saveProjects(this.projects);
+                this.renderProjects(this.projects);
             });
 
             projectDiv.appendChild(deleteIcon);

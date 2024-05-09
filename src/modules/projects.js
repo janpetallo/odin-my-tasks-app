@@ -13,8 +13,6 @@ class Projects {
         this.projects = this.projects.filter(item => 
             item !== project
         );
-        saveProjects(this);
-
     }
     
     getProjects() {
