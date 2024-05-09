@@ -160,6 +160,21 @@ body {
     cursor: pointer;
 }
 
+.todo-list .task:hover svg {
+    display: block;
+}
+
+.todo-list .task svg {
+    display: none;
+    fill: black;
+    width: 1rem;
+    height: 1rem;
+}
+
+.todo-list .task svg:hover {
+    fill: var(--primary-color);
+}
+
 .todo-list .task .date {
     font-size: 0.8rem;
     color: #666;

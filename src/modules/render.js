@@ -77,12 +77,9 @@ class Render {
         const dateDiv = document.createElement('div');
         dateDiv.classList.add('date');
         dateDiv.innerHTML = format(`${todoItem.dueDate}T24:00:00Z`, 'MMMM dd, yyyy'); 
-        console.log(toDate(todoItem.dueDate));       
-
-        console.log(new Date(`${todoItem.dueDate}T24:00:00Z`));
+        
         // if it is past due, add a class to the task
         if (new Date(`${todoItem.dueDate}T24:00:00Z`) < new Date() ) {
-            console.log(new Date(`${todoItem.dueDate}T24:00:00Z`));
             dateDiv.classList.add('past-due');
 
             // Calculate the time difference
@@ -95,10 +92,16 @@ class Render {
             // Display the time difference
             dateDiv.innerHTML += ` (${timeDifference})`;
         }
-        
 
+        // add a delete icon to the task
+        const deleteIcon = document.createElement('div');
+        deleteIcon.classList.add('delete-icon');
+        deleteIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
+
+        
         taskDiv.appendChild(titleDiv);
         taskDiv.appendChild(dateDiv);
+        taskDiv.appendChild(deleteIcon);
 
         this.todoList.appendChild(taskDiv);
     }
