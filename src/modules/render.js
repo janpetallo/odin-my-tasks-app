@@ -64,7 +64,37 @@ class Render {
 
     renderTodoList(project) {
         this.todoList.innerHTML = '';
-        project.todoList.forEach(todoItem => this.renderTodoItem(project, todoItem));
+        this.renderTodoListBasedOnStatus(project);
+
+
+        // Add event listener for the status dropdown
+        const statusDropdown = document.getElementById('todo-status');
+        if (statusDropdown) {
+            statusDropdown.addEventListener('change', () => {
+                this.renderTodoListBasedOnStatus(project);
+            });
+        }
+    }
+
+    renderTodoListBasedOnStatus(project) {
+        const status = document.getElementById('todo-status').value;
+    
+        // Filter tasks based on the selected status
+        const filteredTasks = project.todoList.filter(todoItem => {
+            if (status === 'completed') {
+                return todoItem.completed;
+            } else if (status === 'not_completed') {
+                return !todoItem.completed;
+            } else {
+                return true;  // If no status is selected, return all tasks
+            }
+        });
+    
+        // Clear the existing todo list
+        this.todoList.innerHTML = '';
+    
+        // Render the filtered tasks
+        filteredTasks.forEach(todoItem => this.renderTodoItem(project, todoItem));
     }
 
     renderTodoItem(project, todoItem) {
@@ -220,6 +250,8 @@ class Render {
 
         this.todoList.appendChild(taskDiv);
     }
+
+    
 }
 
 export { Render };
