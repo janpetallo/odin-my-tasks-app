@@ -172,6 +172,24 @@ body {
     margin-left: 2.5rem;
 }
 
+.todo-list .task .more-info svg {
+    fill: black;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.todo-list .task .more-info svg:hover {
+    fill: black;
+}
+
+.todo-list .task .more-info .description,
+.todo-list .task .more-info .priority {
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+    
+}
+
 .todo-list .task:hover {
     background-color: var(--bg-color);
     cursor: pointer;
