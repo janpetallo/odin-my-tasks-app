@@ -175,6 +175,29 @@ class Render {
         taskDiv.appendChild(contentDiv);
         taskDiv.appendChild(actionDiv);
 
+        const moreInfo = document.createElement('div');
+        moreInfo.classList.add('more-info');
+
+        // description
+        const descriptionDiv = document.createElement('div');
+        descriptionDiv.classList.add('description');
+        descriptionDiv.textContent = todoItem.description;
+        moreInfo.appendChild(descriptionDiv);
+
+        // priority
+        const priorityDiv = document.createElement('div');
+        priorityDiv.classList.add('priority');
+        priorityDiv.textContent = todoItem.priority;
+        moreInfo.appendChild(priorityDiv);
+
+        moreInfo.style.display = 'none'; // initially hidden
+        taskDiv.appendChild(moreInfo);
+
+        // add click event listener to the task div
+        taskDiv.addEventListener('click', () => {
+            moreInfo.style.display = moreInfo.style.display === 'none' ? 'block' : 'none';
+        });
+
         this.todoList.appendChild(taskDiv);
     }
 }
