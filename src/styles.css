@@ -107,7 +107,8 @@ body {
 }
 
 .projects .project-list .project svg {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     fill: black;
     width: 1rem;
     height: 1rem;
@@ -123,7 +124,8 @@ body {
 }
 
 .projects .project-list .project:hover svg {
-    display: block;
+    /* display: block; */
+    visibility: visible;
 }
 
 .project.current-selected {
