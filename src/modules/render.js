@@ -176,6 +176,8 @@ class Render {
         const actionDiv = document.createElement('div');
         actionDiv.classList.add('action');
         actionDiv.appendChild(dateDiv);
+
+        
         actionDiv.appendChild(editIcon);
         actionDiv.appendChild(deleteIcon);
 

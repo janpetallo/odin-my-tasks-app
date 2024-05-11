@@ -308,3 +308,56 @@ body {
 }
 
 
+@media screen and (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 8fr;
+    }
+
+    .header {
+        grid-column: 1 / 2;
+    }
+
+    .projects {
+        border-right: none;
+        border-bottom: 2px solid var(--bg-color);
+    }
+
+    #add-todo-button, #add-project-button {
+        width:fit-content;
+        padding: 0;
+    }
+
+    .todos .user-options {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+
+    .todos .user-options #add-todo-button {
+        padding: 0;
+
+    }
+
+    .todos .todo-list .task .taskline {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content:center;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .todo-list .task .action {
+        
+        margin-left: 2rem;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .todo-list .task .more-info {
+        margin-left: 2rem;
+    }
+
+    
+}
+
