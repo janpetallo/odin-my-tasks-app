@@ -177,7 +177,7 @@ class Render {
         actionDiv.classList.add('action');
         actionDiv.appendChild(dateDiv);
 
-        
+
         actionDiv.appendChild(editIcon);
         actionDiv.appendChild(deleteIcon);
 
@@ -252,6 +252,7 @@ class Render {
         // add click event listener to the task div
         taskDiv.addEventListener('click', () => {
             moreInfo.style.display = moreInfo.style.display === 'none' ? 'block' : 'none';
+            taskDiv.classList.toggle('active');
         });
 
         this.todoList.appendChild(taskDiv);
