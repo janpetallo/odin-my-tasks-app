@@ -94,9 +94,32 @@ class Render {
     
         // Clear the existing todo list
         this.todoList.innerHTML = '';
+
+        // If there are no tasks, render a message
+        if (filteredTasks.length === 0 && status === 'completed') {
+            this.renderNoTasksCompleted();
+            return;
+        } else if (filteredTasks.length === 0 && status === 'not_completed') {
+            this.renderNoTasks();
+            return;
+        }
     
         // Render the filtered tasks
         filteredTasks.forEach(todoItem => this.renderTodoItem(project, todoItem));
+    }
+
+    renderNoTasksCompleted() {
+        const noTasks = document.createElement('div');
+        noTasks.classList.add('no-tasks');
+        noTasks.innerHTML = 'Get things done! 🎉'; 
+        this.todoList.appendChild(noTasks);
+    }
+
+    renderNoTasks() {
+        const noTasks = document.createElement('div');
+        noTasks.classList.add('no-tasks');
+        noTasks.innerHTML = 'All tasks completed! 🎉';
+        this.todoList.appendChild(noTasks);
     }
 
     renderTodoItem(project, todoItem) {
