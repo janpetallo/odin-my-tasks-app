@@ -1,27 +1,25 @@
 import { saveProjects } from "./storage";
 
 class Projects {
-    constructor() {
-        this.projects = [];
-    }
-    
-    addProject(project) {
-        this.projects.push(project);
-    }
+  constructor() {
+    this.projects = [];
+  }
 
-    removeProject(project) {
-        this.projects = this.projects.filter(item => 
-            item !== project
-        );
-    }
-    
-    getProjects() {
-        return this.projects;
-    }
+  addProject(project) {
+    this.projects.push(project);
+  }
 
-    getProject(name) {
-        return this.projects.find(project => project.name === name);
-    }
+  removeProject(project) {
+    this.projects = this.projects.filter((item) => item !== project);
+  }
+
+  getProjects() {
+    return this.projects;
+  }
+
+  getProject(name) {
+    return this.projects.find((project) => project.name === name);
+  }
 }
 
 export { Projects };

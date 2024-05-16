@@ -1,390 +1,370 @@
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #f72585;
-    --bg-color: #f1f1f1;
+  --primary-color: #2563eb;
+  --secondary-color: #f72585;
+  --bg-color: #f1f1f1;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .app-container {
-    height: 100vh;
-    padding: 0;
+  height: 100vh;
+  padding: 0;
 
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 10fr;
-
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 10fr;
 }
 
-
 .header {
-    background-color: var(--bg-color);
-    padding: 1rem;
-    text-align: center;
+  background-color: var(--bg-color);
+  padding: 1rem;
+  text-align: center;
 
-    color: var(--primary-color);
+  color: var(--primary-color);
 
-    font-size: 2.5rem;
-    font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 700;
 
-    grid-column: 1 / 3;
+  grid-column: 1 / 3;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header svg {
-    fill: var(--primary-color);
-    width: 3.5rem;
-    height: 3.5rem;
+  fill: var(--primary-color);
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .projects .section-name,
 .todos .section-name {
-    font-weight: 600;
-    font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 #add-todo-button,
 #add-project-button {
-    font-weight: 600;
-    color: var(--primary-color);
-    background-color: white;
-    border: none;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: white;
+  border: none;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
 
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 #add-todo-button:hover,
 #add-project-button:hover {
-    background-color: var(--bg-color);
+  background-color: var(--bg-color);
 }
 
 .projects button svg,
 .todos button svg {
-    fill: var(--primary-color);
-    width: 1.5rem;
-    height: 1.5rem;
+  fill: var(--primary-color);
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .projects {
-    background-color: white;
-    padding: 0.5rem 1rem;
-    width: 100%;
-    border-right: 2px solid var(--bg-color);
+  background-color: white;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-right: 2px solid var(--bg-color);
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .projects .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .projects .project-list .project {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .projects .project-list .project svg {
-    /* display: none; */
-    visibility: hidden;
-    fill: black;
-    width: 1rem;
-    height: 1rem;
+  /* display: none; */
+  visibility: hidden;
+  fill: black;
+  width: 1rem;
+  height: 1rem;
 }
 
 .projects .project-list .project svg:hover {
-    fill: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .projects .project-list .project:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
+  background-color: #f0f0f0;
+  cursor: pointer;
 }
 
 .projects .project-list .project:hover svg {
-    /* display: block; */
-    visibility: visible;
+  /* display: block; */
+  visibility: visible;
 }
 
 .project.current-selected {
-    background-color: var(--bg-color);
+  background-color: var(--bg-color);
 }
 
 .todos {
-    padding: 0.5rem 1rem;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .todo-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .todo-list .task {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #f0f0f0;
 
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .todo-list .task.completed .taskline {
-    text-decoration: line-through;
-    color: #666;
-    animation: fadeIn 0.5s ease-in-out;
+  text-decoration: line-through;
+  color: #666;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.todo-list .task .taskline{
-    padding:0 0.5rem;
+.todo-list .task .taskline {
+  padding: 0 0.5rem;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:1.5rem;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .todo-list .task .more-info {
-    font-size: 0.8rem;
-    margin-left: 2.5rem;
+  font-size: 0.8rem;
+  margin-left: 2.5rem;
 }
 
 .todo-list .task .more-info svg {
-    fill: black;
-    width: 0.8rem;
-    height: 0.8rem;
+  fill: black;
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 .todo-list .task .more-info svg:hover {
-    fill: black;
+  fill: black;
 }
 
 .todo-list .task .more-info .description,
 .todo-list .task .more-info .priority {
-    display: flex;
-    gap: 0.2rem;
-    align-items: flex-start;
-    
+  display: flex;
+  gap: 0.2rem;
+  align-items: flex-start;
 }
 
 .todo-list .task .more-info .description .info-title,
 .todo-list .task .more-info .priority .info-title {
-    display: flex;
-    gap: 0.2rem;
-    align-items: center;
-    
+  display: flex;
+  gap: 0.2rem;
+  align-items: center;
 }
 
 .todo-list .task:hover {
-    background-color: var(--bg-color);
-    cursor: pointer;
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
 
 .todo-list .task .content {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .todo-list .task .content svg {
-    fill: black;
-    width: 1.5rem;
-    height: 1.5rem;
+  fill: black;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-
 .todo-list .task .action {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 
-    justify-content: flex-end;
-    align-items: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .todo-list .task:hover .action svg {
-    /* display: block; */
-    visibility: visible;
+  /* display: block; */
+  visibility: visible;
 }
 
 .todo-list .task .action svg {
-    /* display: none; */
-    visibility: hidden;
-    fill: black;
-    width: 1rem;
-    height: 1rem;
+  /* display: none; */
+  visibility: hidden;
+  fill: black;
+  width: 1rem;
+  height: 1rem;
 }
 
 .todo-list .task svg:hover {
-    fill: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .todo-list .task .date {
-    font-size: 0.8rem;
-    color: #666;
-
+  font-size: 0.8rem;
+  color: #666;
 }
 
 .todo-list .task .date.past-due {
-    color: #dd0505;
+  color: #dd0505;
 }
 
-
-
 .todo-list .task.high {
-    border-left: 5px solid #ff0000;
+  border-left: 5px solid #ff0000;
 }
 
 .todo-list .task.medium {
-    border-left: 5px solid #ff9900;
+  border-left: 5px solid #ff9900;
 }
 
 .todo-list .task.low {
-    border-left: 5px solid #00ff00;
+  border-left: 5px solid #00ff00;
 }
 
 .todos .user-options {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: space-between;
-    align-items: center;
-
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
 #todo-status {
-    width: 200px;
-    height: 35px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 16px;
-    background-color: #f8f8f8;
+  width: 200px;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #f8f8f8;
 }
 
 #todo-status:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 #todo-status option {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .no-tasks {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #666;
-    text-align: center;
-    margin: 5rem; 
-
-
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #666;
+  text-align: center;
+  margin: 5rem;
 }
-
 
 @media screen and (max-width: 768px) {
-    .app-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 8fr;
-    }
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 8fr;
+  }
 
-    .header {
-        grid-column: 1 / 2;
-    }
+  .header {
+    grid-column: 1 / 2;
+  }
 
-    .projects {
-        border-right: none;
-        border-bottom: 2px solid var(--bg-color);
-    }
+  .projects {
+    border-right: none;
+    border-bottom: 2px solid var(--bg-color);
+  }
 
-    #add-todo-button, #add-project-button {
-        width:fit-content;
-        padding: 0;
-    }
+  #add-todo-button,
+  #add-project-button {
+    width: fit-content;
+    padding: 0;
+  }
 
-    .todos .user-options {
-        flex-direction: column;
-        align-items: flex-start;
-        
-    }
+  .todos .user-options {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .todos .user-options #add-todo-button {
-        padding: 0;
+  .todos .user-options #add-todo-button {
+    padding: 0;
+  }
 
-    }
+  .todos .todo-list .task .taskline {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0;
+  }
 
-    .todos .todo-list .task .taskline {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content:center;
-        gap: 0.5rem;
-        padding: 0;
-    }
+  .todo-list .task .action {
+    margin-left: 2rem;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 
-    .todo-list .task .action {
-        
-        margin-left: 2rem;
-        justify-content: center;
-        gap: 0.5rem;
-    }
+  .todo-list .task .more-info {
+    margin-left: 2rem;
+  }
 
-    .todo-list .task .more-info {
-        margin-left: 2rem;
-    }
+  .projects .project-list .project svg {
+    display: none;
+  }
 
-    .projects .project-list .project svg {
-        display: none;
-        
-    }
+  .projects .project-list .project.current-selected svg {
+    display: block;
+  }
 
-    .projects .project-list .project.current-selected svg {
-        display: block;
-    }
+  .todo-list .task .action svg {
+    display: none;
+  }
 
-    .todo-list .task .action svg {
-        display: none;
-    }
-
-    .todo-list .task.active .action svg {
-        display: block;
-    }
-    
-    
+  .todo-list .task.active .action svg {
+    display: block;
+  }
 }
-
